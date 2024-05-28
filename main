@@ -1,0 +1,29 @@
+미니드론 경진대회 2차 과제
+
+%드론 연결
+drone = ryze();
+cam = camera(drone);
+
+%드론 이륙
+ takeoff(drone);
+
+%roll 제어
+moveright(drone,'distance',0.7,'speed',0.6)
+%yaw 제어
+ turn(drone,deg2rad(180));
+%pitch 제어
+ moveforward(drone,'distance',0.7,'speed',0.6)
+%yaw 제어
+ turn(drone,deg2rad(90));
+%pitch 제어
+ moveforward(drone,'distance',0.7,'speed',0.6)
+ pause(0.5);
+%사진 촬영
+ pic1 = snapshot(cam);
+ pause(0.5);
+%yaw 제어 생략
+%roll 제어
+ moveright(drone,'distance',0.7,'speed',0.6)
+ land(drone);
+
+save('task2.mat','pic1');
