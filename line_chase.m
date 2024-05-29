@@ -2,6 +2,8 @@ function [Boundary,Point,M2] = line_chase(BWa,remove)
     Boundary = bwboundaries(BWa);
     C = cellfun(@length,Boundary);
     i = 0;
+
+    
     while 1
         i = i + 1;
         try
